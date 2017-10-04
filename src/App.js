@@ -3,6 +3,11 @@ import React, {Component} from 'react';
 import Header from './Header.js'
 import Initialscreen from './Initialscreen.js'
 import 'isomorphic-fetch'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class Trip extends Component {
   render () {
@@ -10,7 +15,9 @@ class Trip extends Component {
     return (
       <div>
         <Header/>
-        <Initialscreen />
+        <Router>
+        <Route path="/sign-up" component={Initialscreen}/>
+        </Router>
       </div>
     )
   }

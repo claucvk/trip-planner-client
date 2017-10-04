@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom'
 import './App.css';
+
+import axios from 'axios'
 
 const initialState = {
   email: '',
@@ -27,27 +30,24 @@ class Initialscreen extends Component {
     }
   }
   handleSubmit(event) {
-    alert('Sign-up successful')
+    let componentThis = this
     event.preventDefault();
-    fetch('http://localhost:4741/sign-up/', {
-      method: 'POST',
-      headers: {
-    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-  },
-  body: JSON.stringify(
-    {credentials: this.state}
-  )
-})
+    axios({
+      method: 'post',
+      url: 'http://localhost:4741/sign-up/',
+      data: {'credentials': this.state}
+    })
     .then(function(response) {
         if (response.status >= 400) {
             throw new Error("Bad response from server");
         }
-        return response.json();
+        componentThis.props.history.push('/main')
+        console.log(response.data)
+        return response;
     })
-    .then(function(signUp) {
-        console.log(signUp);
-        this.state = initialState;
-    });
+    // .then(function(signUp) {
+    //     console.log(signUp);
+    // });
   }
 
   render () {
@@ -71,4 +71,4 @@ class Initialscreen extends Component {
   }
 }
 
-export default Initialscreen
+export default withRouter(Initialscreen)
