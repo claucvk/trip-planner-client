@@ -8,9 +8,9 @@ import Mainscreen from './Mainscreen.js'
 // Store the token
 const loginUser = {}
 
-// const signout = function () {
-//   loginUser.token=null
-// }
+const signout = function () {
+   loginUser.token=null
+}
 const setToken = function (token) {
   loginUser.token=token
 }
@@ -25,7 +25,7 @@ class Trip extends Component {
       <div>
         <Header />
         <Initialscreen setToken={setToken}/>
-        <Mainscreen getToken={getToken}/>
+        <Mainscreen getToken={getToken} signout={signout}/>
       </div>
     )
   }

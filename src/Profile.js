@@ -12,6 +12,7 @@ class Profile extends Component {
     this.state = initialState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.signoutHandleSubmit = this.signoutHandleSubmit.bind(this);
   }
   handleChange(event) {
     if (event.target.name === "old") {
@@ -34,9 +35,13 @@ class Profile extends Component {
             throw new Error("Bad response from server");
         }
         console.log(response.data)
-        
+
         return response;
     })
+  }
+  signoutHandleSubmit(event) {
+    event.preventDefault();
+    this.props.signout()
   }
   render () {
     return (
@@ -51,6 +56,7 @@ class Profile extends Component {
             <input name="new" type="password" value={this.state.new} onChange={this.handleChange}  />
           </label>
         <input type="submit" value="Submit" />
+        <input type="button" onClick={this.signoutHandleSubmit} value="Sign Out" />
       </form>
     )
   }
