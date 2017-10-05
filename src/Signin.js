@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-
-
 import axios from 'axios'
 
-// SIGN UP
 const initialState = {
   email: '',
   password: '',

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Profile from './Profile.js'
 import Createtrip from './Createtrip.js'
+import Updatetrip from './Updatetrip.js'
 
 class Mainscreen extends Component {
   render () {
@@ -8,6 +9,7 @@ class Mainscreen extends Component {
       <div>
         <Profile />
         <Createtrip />
+        <Updatetrip />
       </div>
     )
   }
