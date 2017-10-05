@@ -29,7 +29,7 @@ class Signin extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    const set = this.props.setToken
+    const set = this.props.signin
     axios({
       method: 'post',
       url: 'http://localhost:4741/sign-in/',
@@ -40,7 +40,7 @@ class Signin extends Component {
             throw new Error("Bad response from server");
         }
         console.log(response.data)
-        set(response.data.user.token)
+        set(response.data.user.token, response.data.user.id)
         return response;
     })
   }

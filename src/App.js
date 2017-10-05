@@ -11,11 +11,12 @@ const loginUser = {}
 const signout = function () {
    loginUser.token=null
 }
-const setToken = function (token) {
+const signin = function (token,id) {
   loginUser.token=token
+  loginUser.id=id
 }
-const getToken = function () {
-  return loginUser.token
+const getUser = function () {
+  return loginUser
 }
 
 class Trip extends Component {
@@ -24,8 +25,8 @@ class Trip extends Component {
     return (
       <div>
         <Header />
-        <Initialscreen setToken={setToken}/>
-        <Mainscreen getToken={getToken} signout={signout}/>
+        <Initialscreen signin={signin}/>
+        <Mainscreen getUser={getUser} signout={signout}/>
       </div>
     )
   }

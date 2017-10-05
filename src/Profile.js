@@ -23,11 +23,17 @@ class Profile extends Component {
       console.log('new password ', event.target.value)
     }
   }
+  // Change password
   handleSubmit(event) {
+    const user = this.props.getUser()
     event.preventDefault();
     axios({
       method: 'patch',
-      url: 'http://localhost:4741/change-password/:id',
+      //this.user.id
+      url: 'http://localhost:4741/change-password/' + user.id,
+      headers: {
+        'Authorization': 'Token ' + user.token
+      },
       data: {'passwords': this.state}
     })
     .then(function(response) {
@@ -39,6 +45,8 @@ class Profile extends Component {
         return response;
     })
   }
+
+// Sign Out
   signoutHandleSubmit(event) {
     event.preventDefault();
     this.props.signout()
@@ -56,6 +64,7 @@ class Profile extends Component {
             <input name="new" type="password" value={this.state.new} onChange={this.handleChange}  />
           </label>
         <input type="submit" value="Submit" />
+        <h2>Sign Out</h2>
         <input type="button" onClick={this.signoutHandleSubmit} value="Sign Out" />
       </form>
     )

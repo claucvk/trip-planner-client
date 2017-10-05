@@ -45,9 +45,13 @@ class Updatetrip extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
+    const apiBaseUrl = 'http://localhost:4741'
     axios({
       method: 'patch',
-      url: 'http://localhost:4741/trips/:id/',
+      url: apiBaseUrl + 'trips',
+      headers: {
+        'Authorization': 'Token ' + this.props.getUser().token
+      },
       data: {'trip': this.state}
     })
     .then(function(response) {

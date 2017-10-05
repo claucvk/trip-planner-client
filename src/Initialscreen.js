@@ -7,7 +7,7 @@ class Initialscreen extends Component {
     return (
       <div>
         <Signup />
-        <Signin setToken={this.props.setToken}/>
+        <Signin signin={this.props.signin}/>
       </div>
     )
   }

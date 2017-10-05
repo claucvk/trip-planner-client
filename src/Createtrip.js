@@ -54,7 +54,7 @@ class Createtrip extends Component {
       url: apiBaseUrl + '/trips',
       method: 'POST',
       headers: {
-        'Authorization': 'Token ' + this.props.getToken()
+        'Authorization': 'Token ' + this.props.getUser().token
       },
       data: {
         'trip': this.state
