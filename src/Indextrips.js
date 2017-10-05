@@ -7,6 +7,7 @@ class Indextrips extends Component {
     super(props)
     this.state = initialState;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   // handleSubmit(event) {
   //   event.preventDefault();
@@ -51,7 +52,25 @@ class Indextrips extends Component {
           setState(response.data);
       })
     }
+    handleDelete(id) {
+      const user = this.props.getUser()
+      axios({
+          url: 'http://localhost:4741/trips/' + id,
+          method: 'DELETE',
+          headers: {
+            'Authorization': 'Token token=' + user.token
+          }
+        })
+        .then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            console.log(response)
+            return response;
+        })
+    }
   render () {
+    const onDelete = this.handleDelete
     return (
     <div>
       <form onSubmit={this.handleSubmit}>
@@ -69,6 +88,7 @@ class Indextrips extends Component {
           <p>Accomodation: {trip.accomodation}</p>
           <p>Eat: {trip.eat}</p>
           <p>Activities: {trip.activities}</p>
+          <input type="button" onClick={() => onDelete(trip.id)} value="Delete" />
         </div>)
       })}
       </div>

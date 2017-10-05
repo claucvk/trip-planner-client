@@ -4,8 +4,6 @@ import Createtrip from './Createtrip.js'
 import Updatetrip from './Updatetrip.js'
 import Indextrips from './Indextrips.js'
 import Showtrip from './Showtrip.js'
-import Deletetrip from './Deletetrip.js'
-
 
 class Mainscreen extends Component {
   render () {
@@ -16,7 +14,6 @@ class Mainscreen extends Component {
         <Updatetrip getUser={this.props.getUser}/>
         <Indextrips getUser={this.props.getUser}/>
         <Showtrip getUser={this.props.getUser}/>
-        <Deletetrip getUser={this.props.getUser}/>
       </div>
     )
   }
