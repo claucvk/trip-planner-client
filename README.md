@@ -30,5 +30,5 @@ As a user:
 - Using a map I want to check transportation and location information related to my trip.
 
 ## Wireframe
-- 
+-
 ## Unsolved problems or major hurdles

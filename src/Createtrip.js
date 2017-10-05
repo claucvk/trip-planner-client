@@ -48,10 +48,17 @@ class Createtrip extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
+    const apiBaseUrl = 'http://localhost:4741'
+    console.log(this.state)
     axios({
-      method: 'post',
-      url: 'http://localhost:4741/trips/',
-      data: {'trip': this.state}
+      url: apiBaseUrl + '/trips',
+      method: 'POST',
+      headers: {
+        'Authorization': 'Token token=$TOKEN'
+      },
+      data: {
+        'trips': this.state
+      }
     })
     .then(function(response) {
         if (response.status >= 400) {
