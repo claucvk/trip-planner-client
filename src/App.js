@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Header from './Header.js'
 import './App.css'
 import Initialscreen from './Initialscreen.js'
-
+import Mainscreen from './Mainscreen.js'
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -15,8 +15,9 @@ class Trip extends Component {
 
     return (
       <div>
-        <Header/>
-        <Initialscreen/>
+        <Header />
+        <Initialscreen />
+        <Mainscreen />
       </div>
     )
   }

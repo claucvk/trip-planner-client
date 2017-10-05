@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
-
-import axios from 'axios'
-
-// SIGN UP
 const initialState = {
   email: '',
   password: '',
@@ -17,7 +14,6 @@ class Signup extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleChange(event) {
     if (event.target.name === "email") {
       this.setState({email: event.target.value});
