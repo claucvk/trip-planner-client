@@ -27,12 +27,12 @@ class Profile extends Component {
   handleSubmit(event) {
     const user = this.props.getUser()
     event.preventDefault();
+    console.log('s')
     axios({
       method: 'patch',
-      //this.user.id
       url: 'http://localhost:4741/change-password/' + user.id,
       headers: {
-        'Authorization': 'Token ' + user.token
+        'Authorization': 'Token token=' + user.token,
       },
       data: {'passwords': this.state}
     })
