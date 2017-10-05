@@ -54,10 +54,10 @@ class Createtrip extends Component {
       url: apiBaseUrl + '/trips',
       method: 'POST',
       headers: {
-        'Authorization': 'Token token=$TOKEN'
+        'Authorization': 'Token ' + this.props.getToken()
       },
       data: {
-        'trips': this.state
+        'trip': this.state
       }
     })
     .then(function(response) {
@@ -71,39 +71,39 @@ class Createtrip extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
-      <h2>Create a new trip</h2>
-      <label>
-          Place:
-          <input name="place_name" type="text" value={this.state.place_name} onChange={this.handleChange}  />
-        </label>
+        <h2>Create a new trip</h2>
         <label>
+            Place:
+            <input name="place_name" type="text" value={this.state.place_name} onChange={this.handleChange}  />
+          </label>
+          <label>
             Departing date:
             <input name="departing_date" type="date" value={this.state.departing_date} onChange={this.handleChange}  />
           </label>
           <label>
-              Returning date:
-              <input name="returning_date" type="date" value={this.state.returning_date} onChange={this.handleChange}  />
-            </label>
-            <label>
-                Travel_duration:
-                <input name="travel_duration" type="text" value={this.state.travel_duration} onChange={this.handleChange}  />
-              </label>
-              <label>
-                  Transportation:
-                  <input name="transportation" type="text" value={this.state.transportation} onChange={this.handleChange}  />
-                </label>
-                <label>
-                    Accomodation:
-                    <input name="accomodation" type="text" value={this.state.accomodation} onChange={this.handleChange}  />
-                  </label>
-                  <label>
-                      Eat:
-                      <input name="eat" type="text" value={this.state.eat} onChange={this.handleChange}  />
-                    </label>
-                    <label>
-                        Activities:
-                        <input name="activities" type="text" value={this.state.activities} onChange={this.handleChange}  />
-                      </label>
+            Returning date:
+            <input name="returning_date" type="date" value={this.state.returning_date} onChange={this.handleChange}  />
+          </label>
+          <label>
+              Travel_duration:
+              <input name="travel_duration" type="text" value={this.state.travel_duration} onChange={this.handleChange}  />
+          </label>
+          <label>
+              Transportation:
+              <input name="transportation" type="text" value={this.state.transportation} onChange={this.handleChange}  />
+          </label>
+          <label>
+              Accomodation:
+              <input name="accomodation" type="text" value={this.state.accomodation} onChange={this.handleChange}  />
+          </label>
+          <label>
+              Eat:
+              <input name="eat" type="text" value={this.state.eat} onChange={this.handleChange}  />
+          </label>
+          <label>
+              Activities:
+              <input name="activities" type="text" value={this.state.activities} onChange={this.handleChange}  />
+          </label>
         <input type="submit" value="Submit" />
       </form>
     )

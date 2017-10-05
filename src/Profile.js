@@ -34,6 +34,7 @@ class Profile extends Component {
             throw new Error("Bad response from server");
         }
         console.log(response.data)
+        
         return response;
     })
   }

@@ -7,9 +7,9 @@ class Mainscreen extends Component {
   render () {
     return (
       <div>
-        <Profile />
-        <Createtrip />
-        <Updatetrip />
+        <Profile getToken={this.props.getToken}/>
+        <Createtrip getToken={this.props.getToken}/>
+        <Updatetrip getToken={this.props.getToken}/>
       </div>
     )
   }
