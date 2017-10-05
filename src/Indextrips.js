@@ -57,6 +57,7 @@ class Indextrips extends Component {
       {this.state.trips.map(function(trip, index){
         return (
           <div key={index}>
+          <p>Trip Id: {trip.id}</p>
           <p>Place: {trip.place_name}</p>
           <p>Departing date: {trip.departing_date}</p>
           <p>Returning date: {trip.returning_date}</p>
