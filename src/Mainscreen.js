@@ -14,9 +14,9 @@ class Mainscreen extends Component {
         <Profile getUser={this.props.getUser} signout={this.props.signout}/>
         <Createtrip getUser={this.props.getUser}/>
         <Updatetrip getUser={this.props.getUser}/>
-        <Indextrips />
-        <Showtrip />
-        <Deletetrip />
+        <Indextrips getUser={this.props.getUser}/>
+        <Showtrip getUser={this.props.getUser}/>
+        <Deletetrip getUser={this.props.getUser}/>
       </div>
     )
   }
