@@ -32,9 +32,12 @@ class Createtrip extends Component {
     } else if (event.target.name === 'travel_duration') {
       this.setState({travel_duration: event.target.value});
       console.log('Travel duration ', event.target.value)
+    } else if (event.target.name === 'accomodation') {
+      this.setState({accomodation: event.target.value});
+      console.log('Accomodation ', event.target.value)
     } else if (event.target.name === 'transportation') {
       this.setState({transportation: event.target.value});
-      console.log('transportation ', event.target.value)
+      console.log('Transportation ', event.target.value)
     } else if (event.target.name === 'eat') {
       this.setState({eat: event.target.value});
       console.log('eat ', event.target.value)
