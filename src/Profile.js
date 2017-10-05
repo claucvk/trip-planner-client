@@ -23,7 +23,6 @@ class Profile extends Component {
     }
   }
   handleSubmit(event) {
-    // let componentThis = this
     event.preventDefault();
     axios({
       method: 'patch',
@@ -34,7 +33,6 @@ class Profile extends Component {
         if (response.status >= 400) {
             throw new Error("Bad response from server");
         }
-        // componentThis.props.history.push('/main')
         console.log(response.data)
         return response;
     })
@@ -42,6 +40,7 @@ class Profile extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
+      <h2>Change password</h2>
       <label>
           Old password:
           <input name="old" type="password" value={this.state.old} onChange={this.handleChange}  />
@@ -55,7 +54,5 @@ class Profile extends Component {
     )
   }
 }
-
-
 
 export default Profile

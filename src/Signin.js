@@ -31,7 +31,6 @@ class Signin extends Component {
     }
   }
   handleSubmit(event) {
-    // let componentThis = this
     event.preventDefault();
     axios({
       method: 'post',
@@ -42,7 +41,6 @@ class Signin extends Component {
         if (response.status >= 400) {
             throw new Error("Bad response from server");
         }
-        // componentThis.props.history.push('/main')
         console.log(response.data)
         return response;
     })
@@ -52,6 +50,7 @@ class Signin extends Component {
     return (
 
       <form onSubmit={this.handleSubmit}>
+      <h2>Sign In</h2>
       <label>
           Email:
           <input name="email" type="email" value={this.state.email} onChange={this.handleChange}  />

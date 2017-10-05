@@ -4,11 +4,6 @@ import Header from './Header.js'
 import './App.css'
 import Initialscreen from './Initialscreen.js'
 import Mainscreen from './Mainscreen.js'
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Link,
-// } from 'react-router-dom'
 
 class Trip extends Component {
   render () {
