@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Header from './Header.js'
 import './App.css'
 import Initialscreen from './Initialscreen.js'
-import 'isomorphic-fetch'
+
 // import {
 //   BrowserRouter as Router,
 //   Route,

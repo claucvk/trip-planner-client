@@ -46,14 +46,10 @@ class Signup extends Component {
         console.log(response.data)
         return response;
     })
-    //.then(function(signUp) {
-    //     console.log(signUp);
-    // });
   }
 
   render () {
     return (
-      // SIGN UP
       <form onSubmit={this.handleSubmit}>
       <label>
           Email:
