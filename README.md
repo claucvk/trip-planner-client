@@ -11,7 +11,7 @@ This is an app that intend to help people to plan trips. It allows you to save a
 - Back-end Repository: https://github.com/claucvk/trip-planner-api
 - Front-end Repository: https://github.com/claucvk/trip-planner-client
 - Back-end Deployed: https://lit-headland-30270.herokuapp.com/
-- Front-end Deployed:
+- Front-end Deployed: https://tripplannercv.herokuapp.com/
 
 ## Tech
 - React.js
