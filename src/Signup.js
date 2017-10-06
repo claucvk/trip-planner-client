@@ -28,6 +28,7 @@ class Signup extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
+    const setState = this.setState
     axios({
       method: 'post',
       url: 'http://localhost:4741/sign-up/',
@@ -39,6 +40,9 @@ class Signup extends Component {
         }
         console.log(response.data)
         return response;
+    })
+    .catch(function(error){
+      //setState({message:error.message})
     })
   }
 

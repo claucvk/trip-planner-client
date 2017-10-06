@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import { withRouter } from 'react-router-dom'
 
 const initialState = {
   email: '',
@@ -30,6 +31,7 @@ class Signin extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const set = this.props.signin
+    const history = this.props.history
     axios({
       method: 'post',
       url: 'http://localhost:4741/sign-in/',
@@ -41,6 +43,7 @@ class Signin extends Component {
         }
         console.log(response.data)
         set(response.data.user.token, response.data.user.id)
+        history.push('/main')
         return response;
     })
   }
@@ -68,4 +71,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin
+export default withRouter(Signin)

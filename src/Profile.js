@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom'
 
 const initialState = {
   old: '',
@@ -50,6 +51,7 @@ class Profile extends Component {
   signoutHandleSubmit(event) {
     event.preventDefault();
     this.props.signout()
+    this.props.history.push('/')
   }
   render () {
     return (
@@ -71,4 +73,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default withRouter(Profile)

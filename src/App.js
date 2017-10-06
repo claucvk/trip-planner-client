@@ -4,6 +4,7 @@ import Header from './Header.js'
 import './App.css'
 import Initialscreen from './Initialscreen.js'
 import Mainscreen from './Mainscreen.js'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 // Store the token
 const loginUser = {}
@@ -23,11 +24,15 @@ class Trip extends Component {
   render () {
 
     return (
+      <Router>
       <div>
         <Header />
-        <Initialscreen signin={signin}/>
-        <Mainscreen getUser={getUser} signout={signout}/>
-      </div>
+        <Route path={'/'} exact render={()=> <Initialscreen signin={signin}/>} />
+
+        <Route path={'/main'} render={()=> <Mainscreen getUser={getUser} signout={signout}/>} />
+
+        </div>
+      </Router>
     )
   }
 }
