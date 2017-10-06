@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Backendurl from './Backendurl'
 
 const initialState = {
   place_name: '',
@@ -48,10 +49,9 @@ class Createtrip extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    const apiBaseUrl = 'http://localhost:4741'
     console.log(this.state)
     axios({
-      url: apiBaseUrl + '/trips',
+      url: Backendurl + '/trips',
       method: 'POST',
       headers: {
         'Authorization': 'Token ' + this.props.getUser().token

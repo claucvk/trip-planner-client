@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Backendurl from './Backendurl'
 
 const initialState = {}
 
@@ -50,7 +51,7 @@ class Showtrip extends Component {
       const setState = this.setState.bind(this)
 
       axios({
-          url: 'http://localhost:4741/trips/' + this.state.id,
+          url: Backendurl + '/trips/' + this.state.id,
           method: 'GET',
           headers: {
             'Authorization': 'Token ' + get.token
@@ -70,7 +71,7 @@ class Showtrip extends Component {
         const setState = this.setState.bind(this)
 
         axios({
-            url: 'http://localhost:4741/trips/' + this.state.id,
+            url: Backendurl + '/trips/' + this.state.id,
             method: 'PATCH',
             headers: {
               'Authorization': 'Token ' + get.token

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Backendurl from './Backendurl'
 
 const initialState = {
   email: '',
@@ -31,7 +32,7 @@ class Signup extends Component {
     const setState = this.setState
     axios({
       method: 'post',
-      url: 'http://localhost:4741/sign-up/',
+      url: Backendurl + '/sign-up/',
       data: {'credentials': this.state}
     })
     .then(function(response) {

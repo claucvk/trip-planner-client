@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom'
+import Backendurl from './Backendurl'
 
 const initialState = {
   old: '',
@@ -31,7 +32,7 @@ class Profile extends Component {
     console.log('s')
     axios({
       method: 'patch',
-      url: 'http://localhost:4741/change-password/' + user.id,
+      url: Backendurl + '/change-password/' + user.id,
       headers: {
         'Authorization': 'Token token=' + user.token,
       },

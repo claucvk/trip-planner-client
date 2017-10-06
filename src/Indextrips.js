@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import Backendurl from './Backendurl'
 
 const initialState = {trips:[]}
 class Indextrips extends Component {
@@ -15,7 +16,7 @@ class Indextrips extends Component {
     const setState = this.setState.bind(this)
 
     axios({
-        url: 'http://localhost:4741/trips',
+        url: Backendurl + '/trips',
         method: 'GET',
         headers: {
           'Authorization': 'Token ' + get.token
@@ -32,7 +33,7 @@ class Indextrips extends Component {
     handleDelete(id) {
       const user = this.props.getUser()
       axios({
-          url: 'http://localhost:4741/trips/' + id,
+          url: Backendurl + '/trips/' + id,
           method: 'DELETE',
           headers: {
             'Authorization': 'Token token=' + user.token
